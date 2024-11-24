@@ -12,7 +12,7 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 # Streamlit App Title
-st.title("SARIMAX Song Streaming Forecast")
+st.title("Spotify Top Songs Popularity and Trend Analysis")
 
 # Step 1: Upload dataset
 uploaded_file = st.file_uploader("Upload CSV file", type="csv")
