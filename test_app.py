@@ -58,8 +58,7 @@ if uploaded_file is not None:
         
         st.write(f"Predicted stream counts for the next {steps_ahead} weeks:", forecast.tolist())
         
-        # Step 6: Plot results
-        st.write("Historical and Forecast Data:")
+        # Step 6: Plot results)
         future_index = range(len(ts_data), len(ts_data) + steps_ahead)
 
         # Step 7: Plot historical and forecasted data
@@ -82,10 +81,6 @@ if uploaded_file is not None:
         plt.legend()
         plt.grid(True)
         st.pyplot(plt)
-
-        # Step 8: Display SARIMAX model summary
-        st.write("SARIMAX Model Summary:")
-        st.text(model_fit.summary())
         
         top_songs = df.nlargest(10, 'popularity')[['track_name', 'popularity']]
         st.write("Top 10 Songs by Popularity:", top_songs)
@@ -213,6 +208,7 @@ if uploaded_file is not None:
     df_filtered = df.drop(columns=columns_to_drop)
     df_numeric = df_filtered.select_dtypes(include=[np.number])
     # Plot Correlation Matrix
+    
     st.write("Correlation Matrix:")
     plt.figure(figsize=(10, 8))
     sns.heatmap(df_numeric.corr(), annot=True, cmap='coolwarm', fmt='.2f')
@@ -247,7 +243,6 @@ if uploaded_file is not None:
 
     st.write(f"MAE: {mae:.2f}")
     st.write(f"R² Score: {r2:.2f}")
-    st.write(f"MSE: {test_mse:.2f}")
 
     # Residual Distribution Plot for Streamlit
     residuals = y_test - y_pred
@@ -300,6 +295,9 @@ if uploaded_file is not None:
     
 
     
+
+
+
 
 
 
