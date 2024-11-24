@@ -211,11 +211,11 @@ if uploaded_file is not None:
                       'Week_11', 'Week_12', 'Week_13', 'Week_14', 'Week_15', 'Week_16', 'Weekly_Mean']
     
     df_filtered = df.drop(columns=columns_to_drop)
-
+    df_numeric = df_filtered.select_dtypes(include=[np.number])
     # Plot Correlation Matrix
     st.write("Correlation Matrix:")
     plt.figure(figsize=(10, 8))
-    sns.heatmap(df_filtered.corr(), annot=True, cmap='coolwarm', fmt='.2f')
+    sns.heatmap(df_numeric.corr(), annot=True, cmap='coolwarm', fmt='.2f')
     st.pyplot(plt)
 
     # Prepare data for regression
