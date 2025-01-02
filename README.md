@@ -28,3 +28,5 @@ Follow these steps to run the app locally:
 3. pip install -r requirements.txt
 4. streamlit run test_app.py
 
+Checkout the Spotify_PPT as well. It covers detailed overview of this project at every stage starting from dataset description till conclusion. 
+(View in slideshow for better experience)
